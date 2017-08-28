@@ -3,7 +3,7 @@ int tests_assert(int condition)
 {
 	if (! condition)
 	{
-		return 1;
+		return __LINE__;
 	}
 	return 0;
 }

@@ -7,7 +7,7 @@ int main()
 {
 	if (tests_assert(0) == 0)
 	{
-		return 1;
+		return __LINE__;
 	}
 	return tests_assert(moves_from_field(field, &moves) == 0);
 }
