@@ -1,5 +1,14 @@
 
-#define tests_assert(x) 0
+#define moves_from_field(x, y) 0
+
+int tests_assert(int condition)
+{
+	if (! condition)
+	{
+		return 1;
+	}
+	return 0;
+}
 
 int main()
 {
