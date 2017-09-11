@@ -1,14 +1,12 @@
 
-#define moves_from_field(x, y) 0
+#include "prod.h"
 
-extern int tests_assert(int condition);
-
-int main()
+int main(void)
 {
 	if (tests_assert(0) == 0)
 	{
 		return __LINE__;
 	}
-	return tests_assert(moves_from_field(field, &moves) == 0);
+	return tests_assert(moves_from_field(0, 0) == 0);
 }
 
