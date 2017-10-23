@@ -5,5 +5,5 @@ asserter_test: asserter/test.c asserter/prod.c
 
 .PHONY:clean
 clean:
-	rm *.exe *.obj
+	rm -f *.exe *.obj
 
