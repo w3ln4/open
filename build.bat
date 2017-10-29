@@ -1,4 +1,4 @@
 @echo off
 call "%VS140COMNTOOLS%"\..\..\VC\bin\amd64\vcvars64
-nmake %1
+nmake /nologo %1
 pause
