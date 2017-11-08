@@ -1,10 +1,10 @@
 
-#define TEST(cond) if (cond) return __LINE__
+int asserter_check(int);
 
 int main(void)
 {
-	TEST(  asserter_check(0 == 0));
-	TEST(! asserter_check(1 == 0));
+	if (  asserter_check(0 == 0)) return 6;
+	if (! asserter_check(1 == 0)) return 7;
 	return 0;
 }
 
