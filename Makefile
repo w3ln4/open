@@ -12,5 +12,5 @@ asserter_test$(EXECUTABLE_SUFFIX): asserter/test.c asserter/prod.c
 
 .PHONY:clean
 clean:
-	$(REMOVE_FILE) *.exe *.obj
+	$(REMOVE_FILE) asserter_test$(EXECUTABLE_SUFFIX) *.obj
 
