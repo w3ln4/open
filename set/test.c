@@ -4,7 +4,7 @@ int set_empty(void);
 
 int main(void)
 {
-	if (! asserter_check(set_empty() == 0)) return __LINE__;
+	if (asserter_check(set_empty() == 0)) return __LINE__;
 	return 0;
 }
 
