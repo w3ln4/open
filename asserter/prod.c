@@ -1,6 +1,6 @@
-int asserter_check(int condition)
+int asserter_is_false(int condition)
 {
-	if (! condition) return 1;
-	return 0;
+	if (condition) return 0;
+	return 1;
 }
 
