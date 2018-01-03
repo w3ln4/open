@@ -11,6 +11,6 @@ int set_size(int set)
 
 int set_add(int set, int element)
 {
-	return element;
+	return 1 << element;
 }
 
