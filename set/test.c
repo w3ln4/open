@@ -18,6 +18,7 @@ int main(void)
 	// set_size tests
 	if (asserter_is_false(set_size(set_empty()) == 0)) return __LINE__;
 	if (asserter_is_false(set_size(set_add(set_empty(), 1)) == 1)) return __LINE__;
+	if (asserter_is_false(set_size(set_add(set_add(set_empty(), 1), 2)) == 2)) return __LINE__;
 	return 0;
 }
 
