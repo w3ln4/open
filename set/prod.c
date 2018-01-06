@@ -5,8 +5,13 @@ int set_empty(void)
 
 int set_size(int set)
 {
-	if (set) return 1;
-	return 0;
+	int size = 0;
+	while (set)
+	{
+		size += set & 1;
+		set >>= 1;
+	}
+	return size;
 }
 
 int set_add(int set, int element)
