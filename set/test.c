@@ -4,7 +4,7 @@ int set_empty(void);
 int set_size(int);
 int set_add(int, int);
 
-int main(void)
+int runner_main(void)
 {
 	// set_empty tests
 	if (asserter_is_false(set_empty() == 0)) return __LINE__;
