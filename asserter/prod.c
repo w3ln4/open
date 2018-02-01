@@ -1,6 +1,8 @@
-int asserter_is_false(int condition)
+void runner_crash(int);
+
+void asserter_crash_if_false(int condition, int return_code)
 {
-	if (condition) return 0;
-	return 1;
+	if (condition) return;
+	runner_crash(return_code);
 }
 

@@ -1,11 +1,11 @@
 
-int asserter_is_false(int);
+void asserter_crash_if_false(int, int);
 int graph_empty(void);
 
 int runner_main(void)
 {
 	// graph_empty tests
-	if (asserter_is_false(graph_empty() == 0)) return __LINE__;
+	asserter_crash_if_false(graph_empty() == 0, __LINE__);
 	return 0;
 }
 

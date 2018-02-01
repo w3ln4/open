@@ -1,10 +1,10 @@
 
-int asserter_is_false(int);
+void asserter_crash_if_false(int, int);
 
 int runner_main(void)
 {
-	if (  asserter_is_false(0 == 0)) return __LINE__;
-	if (! asserter_is_false(1 == 0)) return __LINE__;
-	return 0;
+	asserter_crash_if_false(0 == 0, __LINE__);
+	asserter_crash_if_false(1 == 0, 0);
+	return __LINE__;
 }
 

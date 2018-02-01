@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-void runner_crash(int code)
+void runner_crash(int return_code)
 {
-	exit(code);
+	exit(return_code);
 }
