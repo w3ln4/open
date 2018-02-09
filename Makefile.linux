@@ -1,8 +1,4 @@
 
-LINKER_OBJ2EXE=gcc
-LINKER_OBJ2EXE_FLAGS=
-LINKER_OBJ2EXE_OUTPUT=-o
-PREREQUISITES_ALL=$^
 EXECUTABLE_SUFFIX=.out
 OBJECT_SUFFIX=.o
 REMOVE_FILE=rm -f
@@ -10,6 +6,9 @@ DIRECTORY_SEPARATOR=/
 
 %$(OBJECT_SUFFIX):%.c
 	gcc -Wall -c -o$@ $^
+
+%$(EXECUTABLE_SUFFIX):
+	gcc -o$@ $^
 
 include Makefile.inc
 
