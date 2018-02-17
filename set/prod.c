@@ -1,9 +1,9 @@
-int set_empty(void)
+int bitset_empty(void)
 {
 	return 0;
 }
 
-int set_size(int set)
+int bitset_size(int set)
 {
 	/* Bit-Twiddling Hacks */
 	/* TODO: shall export to bits module to provide more robust solutions
@@ -14,7 +14,7 @@ int set_size(int set)
 	return (set * (~(unsigned int)0/255)) >> (sizeof(int) - 1) * 8;
 }
 
-int set_add(int set, int element)
+int bitset_add(int set, int element)
 {
 	return set | (1 << element);
 }
