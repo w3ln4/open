@@ -1,6 +1,6 @@
 
 void asserter_crash_if_not_equal(int, int, int);
-int bitgraph_empty(void);
+unsigned int bitgraph_empty(void);
 
 int runner_main(void)
 {

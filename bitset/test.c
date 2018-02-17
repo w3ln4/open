@@ -1,9 +1,9 @@
 
 void asserter_crash_if_equal(int, int, int);
 void asserter_crash_if_not_equal(int, int, int);
-int bitset_empty(void);
-int bitset_size(int);
-int bitset_add(int, int);
+unsigned int bitset_empty(void);
+unsigned int bitset_size(unsigned int);
+unsigned int bitset_add(unsigned int, unsigned int);
 
 int runner_main(void)
 {
@@ -19,7 +19,7 @@ int runner_main(void)
 	// ignore out of minimal int size values
 	asserter_crash_if_equal(bitset_add(bitset_empty(), 15), bitset_empty(), __LINE__);
 	asserter_crash_if_not_equal(bitset_add(bitset_empty(), 16), bitset_empty(), __LINE__);
-	asserter_crash_if_not_equal(bitset_add(bitset_empty(), 0x7FFF), bitset_empty(), __LINE__);
+	asserter_crash_if_not_equal(bitset_add(bitset_empty(), 0xFFFF), bitset_empty(), __LINE__);
 
 	// bitset_size tests
 	asserter_crash_if_not_equal(bitset_size(bitset_empty()), 0, __LINE__);

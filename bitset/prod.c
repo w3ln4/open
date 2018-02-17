@@ -1,9 +1,9 @@
-int bitset_empty(void)
+unsigned int bitset_empty(void)
 {
 	return 0;
 }
 
-int bitset_size(int set)
+unsigned int bitset_size(unsigned int set)
 {
 	/* Bit-Twiddling Hacks */
 	/* TODO: shall export to bits module to provide more robust solutions
@@ -11,10 +11,10 @@ int bitset_size(int set)
 	set = set - ((set >> 1) & ~(unsigned int)0/3);
 	set = (set & ~(unsigned int)0/15*3) + ((set >> 2) & ~(unsigned int)0/15*3);
 	set = (set + (set >> 4)) & ~(unsigned int)0/255*15;
-	return (set * (~(unsigned int)0/255)) >> (sizeof(int) - 1) * 8;
+	return (set * (~(unsigned int)0/255)) >> (sizeof(unsigned int) - 1) * 8;
 }
 
-int bitset_add(int set, int element)
+unsigned int bitset_add(unsigned int set, unsigned int element)
 {
 	if (element > 15) return set;
 	return set | (1 << element);
