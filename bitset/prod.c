@@ -16,7 +16,7 @@ int bitset_size(int set)
 
 int bitset_add(int set, int element)
 {
-	if (element > 3) return set;
+	if (element > 15) return set;
 	return set | (1 << element);
 }
 
