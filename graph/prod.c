@@ -1,4 +1,4 @@
-int graph_empty(void)
+int bitgraph_empty(void)
 {
 	return 0;
 }
