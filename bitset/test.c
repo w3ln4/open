@@ -18,6 +18,7 @@ int runner_main(void)
 
 	// ignore out of minimal int size values
 	asserter_crash_if_not_equal(bitset_add(bitset_empty(), 16), bitset_empty(), __LINE__);
+	asserter_crash_if_not_equal(bitset_add(bitset_empty(), 0x7FFF), bitset_empty(), __LINE__);
 
 	// bitset_size tests
 	asserter_crash_if_not_equal(bitset_size(bitset_empty()), 0, __LINE__);
