@@ -10,6 +10,7 @@ unsigned int bitgraph_edge_add(unsigned int graph, unsigned int node1, unsigned 
 
 unsigned int bitgraph_neighbors_get(unsigned int graph, unsigned int node)
 {
+	if (graph) return 1;
 	return 0;
 }
 
