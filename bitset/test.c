@@ -31,6 +31,7 @@ int runner_main(void)
 	// bitset_contains tests
 	asserter_crash_if(bitset_contains(bitset_empty(), 0), __LINE__);
 	asserter_crash_if(! bitset_contains(bitset_add(bitset_empty(), 0), 0), __LINE__);
+	asserter_crash_if(bitset_contains(bitset_add(bitset_empty(), 0), 1), __LINE__);
 
 	return 0;
 }
