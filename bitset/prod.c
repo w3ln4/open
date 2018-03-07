@@ -22,7 +22,7 @@ unsigned int bitset_add(unsigned int set, unsigned int element)
 
 int bitset_contains(unsigned int set, unsigned int element)
 {
-	if (set & (1 << element)) return 1;
+	if (set == (1 + element)) return 1;
 	return 0;
 }
 
