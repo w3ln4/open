@@ -17,6 +17,7 @@ int runner_main(void)
 
 	// bitgraph_edge_set tests
 	asserter_crash_if_not_equal(bitgraph_neighbors_get(bitgraph_empty(), 0), bitset_empty(), __LINE__);
+	asserter_crash_if_equal(bitgraph_neighbors_get(bitgraph_edge_add(bitgraph_empty(), 0, 0), 0), bitset_empty(), __LINE__);
 
 	return 0;
 }
