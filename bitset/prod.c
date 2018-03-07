@@ -17,12 +17,12 @@ unsigned int bitset_size(unsigned int set)
 unsigned int bitset_add(unsigned int set, unsigned int element)
 {
 	if (element > 15) return set;
-	return set | (1 << element);
+	return set | (1U << element);
 }
 
 int bitset_contains(unsigned int set, unsigned int element)
 {
-	if (set == (1 + element)) return 1;
+	if (set == (1U << element)) return 1;
 	return 0;
 }
 
