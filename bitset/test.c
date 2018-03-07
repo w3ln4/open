@@ -26,6 +26,9 @@ int runner_main(void)
 	asserter_crash_if_not_equal(bitset_size(bitset_add(bitset_empty(), 1)), 1, __LINE__);
 	asserter_crash_if_not_equal(bitset_size(bitset_add(bitset_add(bitset_empty(), 1), 2)), 2, __LINE__);
 
+	// bitset_contains tests
+	asserter_crash_if(bitset_contains(bitset_empty(), 0), __LINE__);
+
 	return 0;
 }
 
