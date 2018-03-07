@@ -1,9 +1,11 @@
 
+void asserter_crash_if(int, int);
 void asserter_crash_if_equal(int, int, int);
 void asserter_crash_if_not_equal(int, int, int);
 unsigned int bitset_empty(void);
 unsigned int bitset_size(unsigned int);
 unsigned int bitset_add(unsigned int, unsigned int);
+int bitset_contains(unsigned int, unsigned int);
 
 int runner_main(void)
 {

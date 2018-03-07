@@ -20,3 +20,8 @@ unsigned int bitset_add(unsigned int set, unsigned int element)
 	return set | (1 << element);
 }
 
+int bitset_contains(unsigned int set, unsigned int element)
+{
+	return 0;
+}
+
