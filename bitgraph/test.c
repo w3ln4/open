@@ -2,8 +2,9 @@
 void asserter_crash_if(int, int);
 void asserter_crash_if_not_equal(int, int, int);
 void asserter_crash_if_equal(int, int, int);
+
 unsigned int bitset_empty(void);
-int bitset_contains(unsigned int, unsigned int);
+unsigned int bitset_add(unsigned int, unsigned int);
 
 unsigned int bitgraph_empty(void);
 unsigned int bitgraph_edge_add(unsigned int, unsigned int, unsigned int);
@@ -22,7 +23,7 @@ int runner_main(void)
 	// bitgraph_neighbors_get tests
 	asserter_crash_if_not_equal(bitgraph_neighbors_get(bitgraph_empty(), 0), bitset_empty(), __LINE__);
 	asserter_crash_if_equal(bitgraph_neighbors_get(bitgraph_edge_add(bitgraph_empty(), 0, 0), 0), bitset_empty(), __LINE__);
-	asserter_crash_if(! bitset_contains(bitgraph_neighbors_get(bitgraph_edge_add(bitgraph_empty(), 0, 1), 0), 1), __LINE__);
+	asserter_crash_if_not_equal(bitgraph_neighbors_get(bitgraph_edge_add(bitgraph_empty(), 0, 1), 0), bitset_add(bitset_empty(), 1), __LINE__);
 
 	return 0;
 }
