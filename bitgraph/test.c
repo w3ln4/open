@@ -23,7 +23,15 @@ int runner_main(void)
 	// bitgraph_neighbors_get tests
 	asserter_crash_if_not_equal(bitgraph_neighbors_get(bitgraph_empty(), 0), bitset_empty(), __LINE__);
 	asserter_crash_if_equal(bitgraph_neighbors_get(bitgraph_edge_add(bitgraph_empty(), 0, 0), 0), bitset_empty(), __LINE__);
-	asserter_crash_if_not_equal(bitgraph_neighbors_get(bitgraph_edge_add(bitgraph_empty(), 0, 1), 0), bitset_add(bitset_empty(), 1), __LINE__);
+	{
+		unsigned int graph = bitgraph_empty();
+		unsigned int set   = bitset_empty();
+		// 0 -> 0, 0 -> 1, 0 -> 3
+		graph = bitgraph_edge_add(bitgraph_edge_add(bitgraph_edge_add(
+			graph, 0, 0), 0, 1), 0, 3);
+		set = bitset_add(bitset_add(bitset_add(set, 0), 1), 3);
+		asserter_crash_if_not_equal(bitgraph_neighbors_get(graph, 0), set, __LINE__);
+	}
 
 	return 0;
 }
