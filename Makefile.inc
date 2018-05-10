@@ -7,17 +7,17 @@ test: $(MODULE)/test$(EXECUTABLE_SUFFIX)
 
 runner/test$(EXECUTABLE_SUFFIX): runner/test$(OBJECT_SUFFIX) runner/prod$(OBJECT_SUFFIX) runner/$(RUNNER_IMPLEMENTATION)/impl$(OBJECT_SUFFIX)
 
-asserter/test$(EXECUTABLE_SUFFIX): asserter/test$(OBJECT_SUFFIX) asserter/prod$(OBJECT_SUFFIX) runner/prod$(OBJECT_SUFFIX) runner/main$(OBJECT_SUFFIX) runner/$(RUNNER_IMPLEMENTATION)/impl$(OBJECT_SUFFIX)
+test_framework/asserter/test$(EXECUTABLE_SUFFIX): test_framework/asserter/test$(OBJECT_SUFFIX) test_framework/asserter/prod$(OBJECT_SUFFIX) runner/prod$(OBJECT_SUFFIX) runner/main$(OBJECT_SUFFIX) runner/$(RUNNER_IMPLEMENTATION)/impl$(OBJECT_SUFFIX)
 
-bitset/test$(EXECUTABLE_SUFFIX): bitset/test$(OBJECT_SUFFIX) bitset/prod$(OBJECT_SUFFIX) asserter/prod$(OBJECT_SUFFIX) runner/prod$(OBJECT_SUFFIX) runner/main$(OBJECT_SUFFIX) runner/$(RUNNER_IMPLEMENTATION)/impl$(OBJECT_SUFFIX)
+bitset/test$(EXECUTABLE_SUFFIX): bitset/test$(OBJECT_SUFFIX) bitset/prod$(OBJECT_SUFFIX) test_framework/asserter/prod$(OBJECT_SUFFIX) runner/prod$(OBJECT_SUFFIX) runner/main$(OBJECT_SUFFIX) runner/$(RUNNER_IMPLEMENTATION)/impl$(OBJECT_SUFFIX)
 
-bitgraph/test$(EXECUTABLE_SUFFIX): bitgraph/test$(OBJECT_SUFFIX) bitgraph/prod$(OBJECT_SUFFIX) bitset/prod$(OBJECT_SUFFIX) asserter/prod$(OBJECT_SUFFIX) runner/prod$(OBJECT_SUFFIX) runner/main$(OBJECT_SUFFIX) runner/$(RUNNER_IMPLEMENTATION)/impl$(OBJECT_SUFFIX)
+bitgraph/test$(EXECUTABLE_SUFFIX): bitgraph/test$(OBJECT_SUFFIX) bitgraph/prod$(OBJECT_SUFFIX) bitset/prod$(OBJECT_SUFFIX) test_framework/asserter/prod$(OBJECT_SUFFIX) runner/prod$(OBJECT_SUFFIX) runner/main$(OBJECT_SUFFIX) runner/$(RUNNER_IMPLEMENTATION)/impl$(OBJECT_SUFFIX)
 
 .PHONY:clean
 clean:
 	$(REMOVE_FILE) \
 	runner$(DIRECTORY_SEPARATOR)test$(EXECUTABLE_SUFFIX) runner$(DIRECTORY_SEPARATOR)*$(OBJECT_SUFFIX) runner$(DIRECTORY_SEPARATOR)$(RUNNER_IMPLEMENTATION)$(DIRECTORY_SEPARATOR)*$(OBJECT_SUFFIX) \
-	asserter$(DIRECTORY_SEPARATOR)test$(EXECUTABLE_SUFFIX) asserter$(DIRECTORY_SEPARATOR)*$(OBJECT_SUFFIX) \
+	test_framework$(DIRECTORY_SEPARATOR)asserter$(DIRECTORY_SEPARATOR)test$(EXECUTABLE_SUFFIX) test_framework$(DIRECTORY_SEPARATOR)asserter$(DIRECTORY_SEPARATOR)*$(OBJECT_SUFFIX) \
 	bitset$(DIRECTORY_SEPARATOR)test$(EXECUTABLE_SUFFIX) bitset$(DIRECTORY_SEPARATOR)*$(OBJECT_SUFFIX) \
 	bitgraph$(DIRECTORY_SEPARATOR)test$(EXECUTABLE_SUFFIX) bitgraph$(DIRECTORY_SEPARATOR)*$(OBJECT_SUFFIX)
 
